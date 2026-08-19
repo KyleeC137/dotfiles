@@ -1,0 +1,82 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": [
+        "sway/workspaces"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+    "custom/media-prev",
+    "custom/media",
+    "custom/media-next",
+    "custom/notification",
+        "network",
+        "pulseaudio",
+    ],
+
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true
+    },
+
+    "clock": {
+        "format": "{:%H:%M}"
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤮"
+    },
+
+"pulseaudio": {
+    "format": "  {volume}%",
+    "format-muted": "  muted",
+    "scroll-step": 5,
+    "on-click": "swayosd-client --output-volume mute-toggle",
+    "on-click-middle": "swayosd-client --output-volume mute-toggle",
+    "on-scroll-up": "swayosd-client --output-volume raise",
+    "on-scroll-down": "swayosd-client --output-volume lower"
+},
+
+    "cpu": {
+        "format": "  {usage}%"
+    },
+
+    "memory": {
+        "format": "  {percentage}%"
+    }
+,
+"custom/media-prev": {
+    "format": "󰒮",
+    "on-click": "playerctl previous",
+    "tooltip": false
+},
+
+"custom/media": {
+    "exec": "playerctl metadata --format '{{artist}} — {{title}}' 2>/dev/null || echo 'Nothing playing'",
+    "interval": 2,
+    "max-length": 30,
+    "on-click": "playerctl play-pause",
+    "tooltip": false
+},
+
+"custom/media-next": {
+    "format": "󰒭",
+    "on-click": "playerctl next",
+    "tooltip": false
+},
+
+"custom/notification": {
+    "format": "󰂚",
+    "tooltip": "Notifications",
+    "on-click": "swaync-client -t",
+    "on-click-right": "swaync-client -d"
+}
+}
