@@ -1,0 +1,2 @@
+nvidia-open
+libva-nvidia-driver

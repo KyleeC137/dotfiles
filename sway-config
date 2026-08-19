@@ -22,7 +22,8 @@ set $menu fuzzel
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/caio/Pictures/Wallpapers/q.jpg fill
+output * bg @WALLPAPER@ fill
+
 #
 # Example configuration:
 #
